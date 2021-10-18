@@ -252,7 +252,8 @@ fi
 for i in "$@"; do
   case $i in
     -h=*|--help=*)
-    echo -e "\n+ Usage: $0 -d=<DOMAIN_NAME> -c=<CLUSTER_NAME>"
+    echo -e "\n+ Usage: $0 -n=<IP_TYPE> -d=<DOMAIN_NAME> -c=<CLUSTER_NAME>"
+    echo -e "Valid IP_TYPE values: ipv4/ipv6"
     echo -e "Provide a valid domain name, if not present example.com will be set as the default domain"
     echo -e "Provide a valid cluster name, if not present lab will be set as the default cluster name"
     exit 0
@@ -270,7 +271,8 @@ for i in "$@"; do
     shift
     ;;
     *)
-    echo -e "\n+ Usage: $0 -d=<DOMAIN_NAME> -c=<CLUSTER_NAME>"
+    echo -e "\n+ Usage: $0 -n=<IP_TYPE> -d=<DOMAIN_NAME> -c=<CLUSTER_NAME>"
+    echo -e "Valid IP_TYPE values: ipv4/ipv6"
     echo -e "Provide a valid domain name, if not present example.com will be set as the default domain"
     echo -e "Provide a valid cluster name, if not present lab will be set as the default cluster name"
     exit 1
