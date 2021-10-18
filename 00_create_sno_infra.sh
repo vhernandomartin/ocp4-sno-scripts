@@ -233,7 +233,7 @@ function copy_id_rsa () {
 function copy_install_files () {
   IP=$1
   echo -e "\n+ Copying install files to ${INSTALLER_VM} with IP: ${IP} ..."
-  scp /root/01_pre_reqs_sno.sh /root/02_install_sno.sh /root/find_redfish_host.sh root@[${IP}]:/root/.
+  scp ${SCRIPT_PATH}/01_pre_reqs_sno.sh ${SCRIPT_PATH}/02_install_sno.sh ${SCRIPT_PATH}/find_redfish_host.sh root@[${IP}]:/root/.
 }
 
 function set_etc_hosts () {
@@ -287,6 +287,7 @@ if [[ -z "$CLUSTER_NAME" ]]; then
   CLUSTER_NAME=lab
 fi
 
+SCRIPT_PATH=$(dirname $(realpath $0))
 ## MENU ##
 
 ## MAIN ##
